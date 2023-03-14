@@ -2,10 +2,10 @@
 
 在x86 PC上的執行morphalogy的範例
 比對:
-- 1. kernel大小在無AVX的情況下對於效能的影響
-Ans: kernel越大，運算需要的時間越多
-- 2. 有AVX和無AVX的效能差異
-Ans: 發現開啟AVX後，運算的時間比關閉AVX還多
+1. kernel大小在無AVX的情況下對於效能的影響
+    >kernel越大，運算需要的時間越多
+2. 有AVX和無AVX的效能差異
+    >發現開啟AVX後，運算的時間比關閉AVX還多
 
 ## Code
 ```python
