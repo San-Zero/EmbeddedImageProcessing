@@ -1,9 +1,8 @@
 import cv2 as cv
 import numpy as np
-import time
 
 if __name__ == "__main__":
-    cv.setUseOptimized(False)
+    cv.setUseOptimized(True)
     # cv.setNumThreads(1)
 
     print("Optimized: " + str(cv.useOptimized()))
@@ -17,7 +16,7 @@ if __name__ == "__main__":
     erosionTime = 0
     dilationTime = 0
 
-    for i in range(3, 30, 2):
+    for i in range(3, 120, 20):
         erosionTime = 0
         dilationTime = 0
         count = 0
