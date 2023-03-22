@@ -67,8 +67,8 @@ def main():
     # print(H1)
 
     # 正規化
-    H1 = cv2.normalize(H1, H1, 0, 100, cv2.NORM_MINMAX, -1)
-    H2 = cv2.normalize(H2, H2, 0, 100, cv2.NORM_MINMAX, -1)
+    # H1 = cv2.normalize(H1, H1, 0, 100, cv2.NORM_MINMAX, -1)
+    # H2 = cv2.normalize(H2, H2, 0, 100, cv2.NORM_MINMAX, -1)
 
     # 畫圖
     fig, ax = plt.subplots(2, 2)
@@ -83,7 +83,7 @@ def main():
     ax[1, 0].plot(H1, color='b')
     ax[1, 0].minorticks_on()
     ax[1, 0].set_xlim([0, 300])
-    ax[1, 0].set_ylabel("percentage")
+    # ax[1, 0].set_ylabel("percentage")
 
     ax[1, 1].set_title('Area2')
     ax[1, 1].plot(H2, color='b')
