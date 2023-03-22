@@ -1,10 +1,41 @@
+# HW2
+
+撰寫一個程式
+框出圖片內的某兩個部份
+並判斷其是否相像
+
+## 測試圖片
+
+![image](./road.jpg)
+
+## 選取兩個看起來不一樣的區域
+測試結果
+
+![image](./plot1.png)
+> 比對結果，相關性越高、巴氏距離越低，兩張圖片越相似
+> - 相關性：  0.11231397635367635
+> - 巴氏距離： 0.6292342137089971
+
+## 選取兩個看起來相似的區域
+測試結果
+
+![image](./plot2.png)
+
+> 比對結果，相關性越高、巴氏距離越低，兩張圖片越相似
+> - 相關性：  0.9917894385412611
+> - 巴氏距離： 0.0861190436691372
+
+## Code
+
+```python
+# HW2.py
 import cv2
 import matplotlib.pyplot as plt
 
 global img
 global point1, point2, cut_img1, cut_img2
 
-
+# 滑鼠左右鍵，分別選擇兩個不同的區域，並將兩個區域命名為Area1, Area2存檔
 def on_mouse(event, x, y, flags, param):
     global img, point1, point2, cut_img1, cut_img2
     img2 = img.copy()
@@ -104,3 +135,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+```
