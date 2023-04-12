@@ -48,7 +48,7 @@ def on_mouse(event, x, y, flags, param):
 
 def main():
     global img
-    img = cv2.imread('road.jpg')
+    img = cv2.imread('road2.jpg')
     # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     cv2.namedWindow('image')
     cv2.setMouseCallback('image', on_mouse)
@@ -64,7 +64,7 @@ def main():
     # 直方圖
     H1 = cv2.calcHist([gray1], [0], None, [256], [0, 256])
     H2 = cv2.calcHist([gray2], [0], None, [256], [0, 256])
-    # print(H1)
+    print(H1.shape)
 
     # 正規化
     # H1 = cv2.normalize(H1, H1, 0, 100, cv2.NORM_MINMAX, -1)
@@ -94,6 +94,7 @@ def main():
     plt.show()
 
     # 比較
+    # print(H1.shape)
     compare1 = cv2.compareHist(H1, H2, cv2.HISTCMP_CORREL)
     compare2 = cv2.compareHist(H1, H2, cv2.HISTCMP_BHATTACHARYYA)
 
