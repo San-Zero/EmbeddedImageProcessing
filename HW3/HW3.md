@@ -16,12 +16,18 @@
 4. 透過BFS走訪整張圖片，前一個區塊與後一個區塊比較，若兩者相似，將後一個區塊記錄起來，並把基準換做後一個區塊，待後續比較使用
 5. 最後將記錄好的結果還原成圖片
 
+#### img1-lbp
 ![image](imgs/lbp_result.png)
+
+#### img2-lbp
 ![image](imgs/lbp_result2.png)
 
 ## 將lbp當作watershed的marker
 1. 將BFS走訪後記錄好的結果，當作marker，繪製圖片watershed的結果
 
+#### img1-watershed
 ![image](imgs/watershed_result1.png)
+
+#### img2-watershed
 ![image](imgs/watershed_result2.png)
 
