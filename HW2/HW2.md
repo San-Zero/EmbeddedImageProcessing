@@ -6,12 +6,12 @@
 
 ## 測試圖片
 
-![image](./road.jpg)
+![image](imgs/road.jpg)
 
 ## 選取兩個看起來不一樣的區域
 測試結果
 
-![image](./plot2.png)
+![image](imgs/plot2.png)
 > 比對結果，相關性越低、巴氏距離越高，兩張圖片越不相似
 > - 相關性：  0.11231397635367635
 > - 巴氏距離： 0.6292342137089971
@@ -19,7 +19,7 @@
 ## 選取兩個看起來相似的區域
 測試結果
 
-![image](./plot1.png)
+![image](imgs/plot1.png)
 
 > 比對結果，相關性越高、巴氏距離越低，兩張圖片越相似
 > - 相關性：  0.9917894385412611
@@ -34,6 +34,7 @@ import matplotlib.pyplot as plt
 
 global img
 global point1, point2, cut_img1, cut_img2
+
 
 # 滑鼠左右鍵，分別選擇兩個不同的區域，並將兩個區域命名為Area1, Area2存檔
 def on_mouse(event, x, y, flags, param):
@@ -56,7 +57,7 @@ def on_mouse(event, x, y, flags, param):
         width = abs(point1[0] - point2[0])
         height = abs(point1[1] - point2[1])
         cut_img1 = img[min_y:min_y + height, min_x:min_x + width]
-        cv2.imwrite('Area1.jpg', cut_img1)
+        cv2.imwrite('imgs/Area1.jpg', cut_img1)
 
     if event == cv2.EVENT_RBUTTONDOWN:  # 左键点击
         point1 = (x, y)
@@ -74,12 +75,12 @@ def on_mouse(event, x, y, flags, param):
         width = abs(point1[0] - point2[0])
         height = abs(point1[1] - point2[1])
         cut_img2 = img[min_y:min_y + height, min_x:min_x + width]
-        cv2.imwrite('Area2.jpg', cut_img2)
+        cv2.imwrite('imgs/Area2.jpg', cut_img2)
 
 
 def main():
     global img
-    img = cv2.imread('road.jpg')
+    img = cv2.imread('imgs/road.jpg')
     # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     cv2.namedWindow('image')
     cv2.setMouseCallback('image', on_mouse)
