@@ -25,7 +25,7 @@ def on_mouse(event, x, y, flags, param):
         width = abs(point1[0] - point2[0])
         height = abs(point1[1] - point2[1])
         cut_img1 = img[min_y:min_y + height, min_x:min_x + width]
-        cv2.imwrite('Area1.jpg', cut_img1)
+        cv2.imwrite('imgs/Area1.jpg', cut_img1)
 
     if event == cv2.EVENT_RBUTTONDOWN:  # 左键点击
         point1 = (x, y)
@@ -43,12 +43,12 @@ def on_mouse(event, x, y, flags, param):
         width = abs(point1[0] - point2[0])
         height = abs(point1[1] - point2[1])
         cut_img2 = img[min_y:min_y + height, min_x:min_x + width]
-        cv2.imwrite('Area2.jpg', cut_img2)
+        cv2.imwrite('imgs/Area2.jpg', cut_img2)
 
 
 def main():
     global img
-    img = cv2.imread('road2.jpg')
+    img = cv2.imread('imgs/road2.jpg')
     # img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     cv2.namedWindow('image')
     cv2.setMouseCallback('image', on_mouse)
