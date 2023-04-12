@@ -124,7 +124,7 @@ def display(img, cmap=None):
 
 if __name__ == '__main__':
     # 讀取圖像
-    img = cv2.imread('road.jpg')
+    img = cv2.imread('imgs/road.jpg')
 
     img = cv2.resize(img, (640, 480), interpolation=cv2.INTER_AREA)
 
